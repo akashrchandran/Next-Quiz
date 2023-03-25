@@ -10,7 +10,7 @@
       }
     ],
     "builds": [
-      { "src": "server.js", "use": "@vercel/node" },
-      { "src": "next.config.js", "use": "@vercel/next" }
+      { "src": "express/server.js", "use": "@vercel/node" },
+      { "src": "nextapp/next.config.js", "use": "@vercel/next" }
     ]
   }
