@@ -1,0 +1,15 @@
+
+body { background-color: #c8fc83;
+  border:2px dashed white;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 110%;
+    padding: 25px;
+}
+form { background-color: #83bbfc;
+  border:2px dashed white;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 110%;
+    padding: 25px;
+}
+
+
