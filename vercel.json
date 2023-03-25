@@ -1,0 +1,16 @@
+{
+    "routes": [
+      {
+        "src": "/api/.*",
+        "dest": "express/server.js"
+      },
+      {
+        "src": "/(.*)",
+        "dest": "nextapp/pages/$1"
+      }
+    ],
+    "builds": [
+      { "src": "server.js", "use": "@vercel/node" },
+      { "src": "next.config.js", "use": "@vercel/next" }
+    ]
+  }
