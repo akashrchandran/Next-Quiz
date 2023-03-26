@@ -10,7 +10,7 @@ var db = mongoose.connection;
 db.on('error', console.error.bind(console, 'MongoDB failed to connect to vocab:'));
 db.on('connected', console.log.bind(console,'MongoDB connected to vocab:', db.name));
 app.use(function(req, res, next) {
-    res.header("Access-Control-Allow-Origin", "http://localhost:3000");
+    res.header("Access-Control-Allow-Origin", "https://next-quiz-nu.vercel.app");
     res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
     next();
   });
