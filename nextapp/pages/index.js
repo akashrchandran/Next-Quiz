@@ -9,7 +9,7 @@ const fetcher = url => fetch(url).then(r=>r.json());
 
 export async function getStaticProps(context) {
   
-   const words = await fetcher("http://localhost:9000/api/word");
+   const words = await fetcher("https://next-quiz-xi.vercel.app/api/word");
   if(!words) {
     return {
       notFound:true,
@@ -23,7 +23,7 @@ export async function getStaticProps(context) {
 
 
 export default function Home({words}) {
-  const {data, error} = useSWR('http://localhost:9000/api/word', fetcher)
+  const {data, error} = useSWR('https://next-quiz-xi.vercel.app/api/word', fetcher)
   if (error) return <div>Failed to load</div>
   if (!data) return <div>Loading...</div>
 
@@ -50,7 +50,7 @@ export default function Home({words}) {
           // expire cookie
           document.cookie = 'token=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;'
           // tell all SWRs with this key to revalidate (include mutate)
-          mutate('http://localhost:9000/api/word');
+          mutate('https://next-quiz-xi.vercel.app/api/word');
         }}>Load new Question</button>
 
         
