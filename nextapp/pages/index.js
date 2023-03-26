@@ -2,7 +2,7 @@ import Head from 'next/head'
 import styles from '../styles/Home.module.css'
 import useSWR, { mutate } from 'swr'
 
-import Question from './Question';
+import Question from '../public/Question';
 
 
 const fetcher = url => fetch(url).then(r=>r.json());

@@ -7,7 +7,7 @@ class Question extends Component {
         this.state = {
             correct: null,
             selectedOption: null,
-            words:this.props.words
+            words:this.props.words,
         }
         this.word = this.state.words[0].word;
         this.def = this.state.words[0].def;
@@ -16,13 +16,15 @@ class Question extends Component {
         this.handleChange = this.handleChange.bind(this);
         this.formSubmit = this.formSubmit.bind(this);
     }
-    componentWillReceiveProps(nextProps) {
-        this.setState({ words: nextProps.words }); 
-        this.word = this.state.words[0].word;
-        this.def = this.state.words[0].def;
-
-        this.array = this.randomize(this.state.words); 
-    }
+    componentDidUpdate(prevProps) {
+        if (this.props.words !== prevProps.words) {
+          this.setState({ words: this.props.words });
+          this.word = this.props.words[0].word;
+          this.def = this.props.words[0].def;
+    
+          this.array = this.randomize(this.props.words);
+        }
+      }
 
     handleChange(event) {
         this.setState({
